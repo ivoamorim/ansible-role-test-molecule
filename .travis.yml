@@ -9,6 +9,7 @@ env:
     - MOLECULE_DISTRO: centos:7
       MOLECULE_DOCKER_COMMAND: /usr/lib/systemd/systemd
     - MOLECULE_DISTRO: centos:6
+      MOLECULE_DOCKER_COMMAND: /sbin/init
 
 install:
   # Install test dependencies.
