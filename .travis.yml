@@ -1,0 +1,27 @@
+---
+language: python
+services: docker
+
+env:
+  global:
+    - ROLE_NAME: test-molecule
+
+install:
+  # Install test dependencies.
+  - pip install molecule docker
+
+before_script:
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq python-apt python-pycurl
+  # Use actual Ansible Galaxy role name for the project directory.
+  - cd ../
+  - mv ansible-role-$ROLE_NAME ivoamorim.$ROLE_NAME
+  - cd ivoamorim.$ROLE_NAME
+
+script:
+  # Run tests.
+  - molecule test
+
+notifications:
+  email:
+    - amochanyade@gmail.com
