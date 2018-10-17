@@ -7,8 +7,10 @@ lint:
   name: yamllint
 platforms:
   - name: instance
-    image: milcom/centos7-systemd
+    image: ${MOLECULE_DISTRO:-centos:7}
+    command: ${MOLECULE_DOCKER_COMMAND:-"sleep infinity"}
     privileged: true
+    pre_build_image: true
 provisioner:
   name: ansible
   lint:

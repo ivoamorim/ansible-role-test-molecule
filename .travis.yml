@@ -5,6 +5,10 @@ services: docker
 env:
   global:
     - ROLE_NAME: test-molecule
+  matrix:
+    - MOLECULE_DISTRO: centos:7
+      MOLECULE_DOCKER_COMMAND: /usr/lib/systemd/systemd
+    - MOLECULE_DISTRO: centos:6
 
 install:
   # Install test dependencies.
@@ -23,5 +27,4 @@ script:
   - molecule test
 
 notifications:
-  email:
-    - amochanyade@gmail.com
+  email: false
