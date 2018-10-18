@@ -6,9 +6,8 @@ env:
   global:
     - ROLE_NAME: test-molecule
   matrix:
-    - MOLECULE_DISTRO: geerlingguy/docker-centos7-ansible
+    - MOLECULE_DISTRO: centos:7
       MOLECULE_DOCKER_COMMAND: /usr/lib/systemd/systemd
-    - MOLECULE_DISTRO: geerlingguy/docker-centos6-ansible
 
 install:
   # Install test dependencies.
