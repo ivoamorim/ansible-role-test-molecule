@@ -9,7 +9,6 @@ env:
     - MOLECULE_DISTRO: geerlingguy/docker-centos7-ansible
       MOLECULE_DOCKER_COMMAND: /usr/lib/systemd/systemd
     - MOLECULE_DISTRO: geerlingguy/docker-centos6-ansible
-      MOLECULE_DOCKER_COMMAND: /sbin/init
 
 install:
   # Install test dependencies.
