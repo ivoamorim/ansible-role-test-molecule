@@ -7,8 +7,10 @@ lint:
   name: yamllint
 platforms:
   - name: instance
-    image: ${MOLECULE_DISTRO:-centos:7}
-    command: ${MOLECULE_DOCKER_COMMAND:-"sleep infinity"}
+    image: "geerlingguy/docker-${MOLECULE_DISTRO:-centos7}-ansible:latest"
+    command: ${MOLECULE_DOCKER_COMMAND:-""}
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
     pre_build_image: true
 provisioner:

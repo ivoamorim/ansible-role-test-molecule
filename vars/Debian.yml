@@ -1,0 +1,7 @@
+---
+packages:
+  - apache2
+  - net-tools
+
+services:
+  - apache2

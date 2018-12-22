@@ -1,5 +1,6 @@
+.DS_Store
 *.retry
-*/__pycache__
+__pycache__/
 *.pyc
 
 # Environments
