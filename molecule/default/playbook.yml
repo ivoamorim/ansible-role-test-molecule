@@ -1,5 +1,12 @@
 ---
 - name: Converge
   hosts: all
+
+  pre_tasks:
+    - name: Install Dependencies.
+      yum: name=libselinux-python
+      when: ansible_os_family == 'RedHat'
+      changed_when: false
+
   roles:
     - role: ansible-role-test-molecule
